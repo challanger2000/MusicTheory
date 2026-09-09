@@ -104,10 +104,13 @@ function MusicTheoryAnalyzer() {
   this.paramList.controller = this
   this.events = []
   this.editor = null
+  this.selector = null
 
   this.prepareEdit = function(context) {
     context.restore()
     this.editor = context.editor
+    this.selector = this.editor ? this.editor.createSelectFunctions(context.functions) : null
+    if (this.selector) this.selector.executeImmediately = true
     this.events = []
 
     this.Headline = this.paramList.addString("Headline")
