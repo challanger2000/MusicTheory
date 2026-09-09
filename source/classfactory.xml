@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassFactory>
+  <ScriptClass
+    classID="{A3B0E91E-2D6C-4B94-9F0E-2B5F1C7A6D11}"
+    category="FrameworkService"
+    name="Music Theory Service"
+    sourceFile="main.js"
+    functionName="createServiceInstance"/>
+
+  <ScriptClass
+    classID="{C2A7F4D1-8A4D-4F61-9D59-E8E20C16B28A}"
+    category="EditAddIn"
+    subCategory="Engine"
+    name="Music Theory"
+    sourceFile="main.js"
+    functionName="createPanelInstance">
+    <Attribute id="groupName" value="MusicOnly.AddInPanel"/>
+    <Attribute id="formName" value="MusicTheoryPanel"/>
+  </ScriptClass>
+
+  <ScriptClass
+    classID="{4F97A15B-0E54-451C-9C2D-9BA76D947E73}"
+    category="EditTask"
+    subCategory="MusicEdit"
+    name="Music Theory: Analyze Selection"
+    sourceFile="main.js"
+    functionName="createAnalyzeSelectionInstance">
+    <Attribute id="commandCategory" value="Musical Functions"/>
+    <Attribute id="menuGroup" value="MusicProcess"/>
+    <Attribute id="musicEditorOnly" value="1"/>
+    <Attribute id="useEventSelection" value="1"/>
+  </ScriptClass>
+</ClassFactory>
