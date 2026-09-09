@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skin>
+  <Forms>
+    <Form name="MusicTheoryDialog" title="Music Theory" windowstyle="dialogstyle restorepos" firstfocus="Headline">
+      <Vertical margin="14" spacing="10">
+        <Label name="Headline" title="SELECTION ANALYSIS"/>
+        <DialogGroup title="Selected Notes">
+          <Vertical margin="10" spacing="6">
+            <Label name="Selection" title="No MIDI notes selected" width="620"/>
+          </Vertical>
+        </DialogGroup>
+        <DialogGroup title="Chord">
+          <Vertical margin="10" spacing="6">
+            <Label name="Chord" title="—" width="620"/>
+          </Vertical>
+        </DialogGroup>
+        <DialogGroup title="Scale Matches">
+          <Vertical margin="10" spacing="6">
+            <Horizontal spacing="8">
+              <Label title="Exact" width="70"/>
+              <Label name="ScaleExact" title="—" width="540"/>
+            </Horizontal>
+            <Horizontal spacing="8">
+              <Label title="Compatible" width="70"/>
+              <Label name="ScaleCompatible" title="—" width="540"/>
+            </Horizontal>
+          </Vertical>
+        </DialogGroup>
+        <DialogGroup title="Why?">
+          <Vertical margin="10" spacing="6">
+            <Label name="Why" title="Select notes in the Music Editor and run the command again." width="620"/>
+          </Vertical>
+        </DialogGroup>
+      </Vertical>
+    </Form>
+  </Forms>
+</Skin>
