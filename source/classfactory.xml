@@ -6,10 +6,9 @@
     subCategory="MusicEdit"
     name="Music Theory: Analyze Selection"
     sourceFile="main.js"
-    functionName="createInstance">
+    functionName="createInstance"
+    metaClassID="{5BF1B237-DE56-41EB-A48D-E54F61756A68}">
+    <Attribute id="menuGroup" value="Scripts"/>
     <Attribute id="commandCategory" value="Musical Functions"/>
-    <Attribute id="menuGroup" value="MusicProcess"/>
-    <Attribute id="musicEditorOnly" value="1"/>
-    <Attribute id="useEventSelection" value="1"/>
   </ScriptClass>
 </ClassFactory>
