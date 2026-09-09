@@ -99,12 +99,16 @@ function limitList(values, max) {
 }
 
 function MusicTheoryAnalyzer() {
-  this.interfaces = [Host.Interfaces.IEditTask, Host.Interfaces.IController, Host.Interfaces.IParamObserver]
+  this.interfaces = [Host.Interfaces.IEditTask, Host.Interfaces.IController, Host.Interfaces.IObserver, Host.Interfaces.IParamObserver]
   this.paramList = Host.Classes.createInstance("CCL:ParamList")
   this.paramList.controller = this
+  this.events = []
+  this.editor = null
 
   this.prepareEdit = function(context) {
     context.restore()
+    this.editor = context.editor
+    this.events = []
 
     this.Headline = this.paramList.addString("Headline")
     this.Selection = this.paramList.addString("Selection")
@@ -113,15 +117,17 @@ function MusicTheoryAnalyzer() {
     this.ScaleCompatible = this.paramList.addString("ScaleCompatible")
     this.Why = this.paramList.addString("Why")
 
-    var pitches = []
-    if (context.editor && context.editor.selection) {
-      var it = context.editor.selection.newIterator()
+    if (this.editor && this.editor.selection) {
+      var it = this.editor.selection.newIterator()
       if (it && it.first) it.first()
       while (it && !it.done()) {
-        var e = it.next()
-        if (e && e.pitch !== undefined && e.pitch !== null) pitches.push(Number(e.pitch))
+        var n = it.next()
+        if (n) this.events.push(n)
       }
     }
+
+    var pitches = []
+    for (var i = 0; i < this.events.length; i++) pitches.push(Number(this.events[i].pitch))
 
     if (!pitches.length) {
       this.Headline.value = "SELECTION ANALYSIS"
@@ -163,6 +169,7 @@ function MusicTheoryAnalyzer() {
 
   this.performEdit = function(context) { return Host.Results.kResultOk }
   this.paramChanged = function(param) {}
+  this.notify = function(subject) {}
 }
 
 function createInstance() { return new MusicTheoryAnalyzer() }
