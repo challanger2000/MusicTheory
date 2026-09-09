@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skin>
+  <Images>
+    <Image name="MusicTheoryIcon" url="images/MusicTheoryIcon.svg"/>
+  </Images>
   <Forms>
     <Form name="MusicTheoryPanel" attach="all fitsize" windowstyle="panelstyle">
-      <AlignView name="://Workspace/studioapp/~/CustomParams/addInPanelAlign" attach="left right fill">
-        <Horizontal margin="8" spacing="12" attach="all">
-          <Label name="Title" title="MUSIC THEORY" style="Standard.AddIn.Title" width="110"/>
-          <Label name="Status" title="Native panel architecture spike" style="Standard.AddIn.Label" width="210"/>
-          <Label name="Selection" title="Select MIDI notes and run Analyze Selection" style="Standard.AddIn.Label" width="420"/>
-        </Horizontal>
-      </AlignView>
+      <Horizontal margin="8" spacing="12" attach="all">
+        <Label name="Title" title="MUSIC THEORY" width="110"/>
+        <Label name="Status" title="Native panel architecture spike" width="210"/>
+        <Label name="Selection" title="Select MIDI notes and run Analyze Selection" width="420"/>
+      </Horizontal>
     </Form>
   </Forms>
 </Skin>
