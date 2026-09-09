@@ -1,0 +1,32 @@
+name: Build Music Theory Package
+
+on:
+  push:
+    branches:
+      - prototype/dialog-analysis
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Studio Pro package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f MusicTheory.package
+          cd source
+          zip -r ../MusicTheory.package metainfo.xml classfactory.xml main.js skin
+          cd ..
+          test -s MusicTheory.package
+          unzip -t MusicTheory.package
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: MusicTheory-package
+          path: MusicTheory.package
+          if-no-files-found: error
