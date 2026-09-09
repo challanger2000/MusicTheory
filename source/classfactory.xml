@@ -9,6 +9,7 @@
 
   <ScriptClass
     classID="{C2A7F4D1-8A4D-4F61-9D59-E8E20C16B28A}"
+    metaClassID="{D8C2E8F5-3D70-4A5B-8F73-93E64A1B7D42}"
     category="EditAddIn"
     subCategory="Engine"
     name="Music Theory"
@@ -17,6 +18,10 @@
     <Attribute id="groupName" value="MusicOnly.AddInPanel"/>
     <Attribute id="formName" value="MusicTheoryPanel"/>
   </ScriptClass>
+
+  <ScriptMetaClass classID="{D8C2E8F5-3D70-4A5B-8F73-93E64A1B7D42}">
+    <ScriptClassResource id="Class:ImageResource" url="theme://$package/MusicTheoryIcon"/>
+  </ScriptMetaClass>
 
   <ScriptClass
     classID="{4F97A15B-0E54-451C-9C2D-9BA76D947E73}"
