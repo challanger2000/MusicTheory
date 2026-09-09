@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassFactory>
+  <ScriptClass
+    classID="{9E5C8CC2-6C15-4D8F-A2A8-8F6C6C0F2D41}"
+    category="EditTask"
+    subCategory="MusicEdit"
+    name="Music Theory: Analyze Selection"
+    sourceFile="main.js"
+    functionName="createInstance">
+    <Attribute id="commandCategory" value="Musical Functions"/>
+    <Attribute id="menuGroup" value="MusicProcess"/>
+    <Attribute id="musicEditorOnly" value="1"/>
+    <Attribute id="useEventSelection" value="1"/>
+  </ScriptClass>
+</ClassFactory>
