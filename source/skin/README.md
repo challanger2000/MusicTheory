@@ -1,0 +1,1 @@
+Temporary native-panel spike resources. The toolbar icon is added as a binary asset in this branch; the production UI will replace it with final artwork.
